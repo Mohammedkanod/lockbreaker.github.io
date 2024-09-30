@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master of Permutations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Store Background -->
+    <div id="store-background">
+        <div class="inf">
+        <h1>Welcome To The <b class="bagC" >Bag Corner</b> Shop</h1>
+        <p>Your Role Here Is : Lock Breaker</p>
+        <p id="customer-message">Customers are waiting...</p>
+        <button id="start-game">Start Helping</button>
+    </div>
+    </div>
+
+    <!-- Lock Solving Section -->
+    <div id="game-container" style="display:none;">
+        <h2>Hint : <span id="hint-message"></span></h2>
+        <div id="lock-container">
+            <!-- Rotating Wheels (3-digit or 4-digit based on level) -->
+        </div>
+        <div id="bag" value="mkmkm">
+         <img src="bagClosed.jpg" alt="" srcset="" class="bagimg">
+        </div>
+        <button id="submit-guess">Crack the Lock</button>
+        <p id="result-message"></p>
+        <button id="next-customer" style="display:none;">Next Customer</button>
+        <div id="accuracy-display">Current Accuracy: 100%</div>
+        <div id="attempt-history"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

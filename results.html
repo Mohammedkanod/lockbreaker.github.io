@@ -1,0 +1,106 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Game Results</h1>
+        <canvas id="accuracyChart" width="400" height="200"></canvas>
+        <div id="accuracyDetails">
+            <h2>Accuracy Details</h2>
+            <ul id="accuracyHistory"></ul>
+            <p>Average Accuracy: <span id="averageAccuracy"></span>%</p>
+        </div>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+    <script>
+        // results.js
+const accuracyHistory = JSON.parse(localStorage.getItem("accuracyHistory")) || [];
+const averageAccuracy = accuracyHistory.reduce((sum, acc) => sum + acc, 0) / accuracyHistory.length || 0;
+
+document.getElementById("averageAccuracy").innerText = averageAccuracy.toFixed(2);
+const accuracyList = document.getElementById("accuracyHistory");
+
+accuracyHistory.forEach((acc, index) => {
+    const li = document.createElement("li");
+    li.innerText = `Attempt ${index + 1}: ${acc}%`;
+    accuracyList.appendChild(li);
+});
+
+// Chart.js code to create the accuracy chart
+const ctx = document.getElementById('accuracyChart').getContext('2d');
+const accuracyChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: accuracyHistory.map((_, index) => `Attempt ${index + 1}`),
+        datasets: [{
+            label: 'Accuracy',
+            data: accuracyHistory,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderWidth: 2,
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100 // Set max Y value to 100 for percentage
+            }
+        }
+    }
+});
+
+// Function to restart the game
+function restartGame() {
+    window.location.href = 'index.html'; // Redirect to the main game page
+}
+
+    </script>
+</body>
+</html>
