@@ -10,177 +10,117 @@ let attemptHistory = [];
 // List of PnC-based hints for each level
 const hints = [
     {
-        hint: "251  :  Two numbers are correct but wrongly placed \n\n609  :  One number is correct and well placed  \n\n473  :  Nothing is correct",
+        hint: "237  :  One number is correct and well placed \n\n460  :  Two numbers are correct but wrongly placed \n\n195  :  Nothing is correct \n\n821  :  One number is correct but wrongly placed",
         codeLength: 3,
-        digits: [2, 1, 9],
+        digits: [4, 0, 2],
         permutations: 6
     },
     {
-        hint: "432  :  Two numbers are correct but wrongly placed \n\n518  :  One number is correct and well placed \n\n760  :  Nothing is correct",
+        hint: "861  :  One number is correct and well placed \n\n523  :  Two numbers are correct but wrongly placed \n\n794  :  Nothing is correct \n\n289  :  One number is correct but wrongly placed",
         codeLength: 3,
-        digits: [5, 1, 9],
+        digits: [2, 6, 1],
         permutations: 6
     },
     {
-        hint: "381  :  Two numbers are correct but wrongly placed \n\n926  :  Nothing is correct \n\n457  :  One number is correct and well placed",
+        hint: "913  :  One number is correct and well placed \n\n507  :  Nothing is correct \n\n284  :  One number is correct but wrongly placed \n\n146  :  Two numbers are correct but wrongly placed",
         codeLength: 3,
-        digits: [4, 8, 7],
+        digits: [1, 9, 3],
         permutations: 6
     },
     {
-        hint: "567  :  Nothing is correct \n\n241  :  Two numbers are correct but wrongly placed \n\n984  :  One number is correct and well placed",
+        hint: "314  :  One number is correct and well placed \n\n209  :  Two numbers are correct but wrongly placed \n\n875  :  Nothing is correct \n\n467  :  One number is correct and well placed",
         codeLength: 3,
-        digits: [2, 8, 1],
+        digits: [1, 2, 3],
         permutations: 6
     },
     {
-        hint: "703  :  One number is correct and well placed \n\n594  :  Nothing is correct \n\n218  :  Two numbers are correct but wrongly placed",
+        hint: "472  :  Two numbers are correct but wrongly placed \n\n865  :  One number is correct and well placed \n\n193  :  Nothing is correct \n\n570  :  One number is correct but wrongly placed",
         codeLength: 3,
-        digits: [7, 2, 1],
+        digits: [2, 7, 4],
         permutations: 6
     },
     {
-        hint: "824  :  Two numbers are correct but wrongly placed \n\n931  :  One number is correct and well placed \n\n547  :  Nothing is correct",
-        codeLength: 3,
-        digits: [3, 9, 1],
-        permutations: 6
-    },
-    {
-        hint: "768  :  One number is correct and well placed \n\n542  :  Nothing is correct \n\n930  :  Two numbers are correct but wrongly placed",
-        codeLength: 3,
-        digits: [9, 7, 8],
-        permutations: 6
-    },
-    {
-        hint: "684  :  Two numbers are correct but wrongly placed \n\n752  :  One number is correct and well placed \n\n139  :  Nothing is correct",
-        codeLength: 3,
-        digits: [6, 5, 8],
-        permutations: 6
-    },
-    {
-        hint: "421  :  One number is correct and well placed \n\n308  :  Two numbers are correct but wrongly placed \n\n976  :  Nothing is correct",
-        codeLength: 3,
-        digits: [3, 1, 8],
-        permutations: 6
-    },
-    {
-        hint: "857  :  Nothing is correct \n\n240  :  One number is correct and well placed \n\n931  :  Two numbers are correct but wrongly placed",
-        codeLength: 3,
-        digits: [9, 1, 0],
-        permutations: 6
-    },
-    {
-        hint: "612  :  Two numbers are correct but wrongly placed \n\n954  :  One number is correct and well placed \n\n307  :  Nothing is correct",
-        codeLength: 3,
-        digits: [9, 1, 2],
-        permutations: 6
-    },
-    {
-        hint: "348  :  One number is correct and well placed \n\n526  :  Two numbers are correct but wrongly placed \n\n709  :  Nothing is correct",
-        codeLength: 3,
-        digits: [3, 2, 8],
-        permutations: 6
-    },
-    {
-        hint: "720  :  Nothing is correct \n\n361  :  Two numbers are correct but wrongly placed \n\n498  :  One number is correct and well placed",
-        codeLength: 3,
-        digits: [3, 9, 8],
-        permutations: 6
-    },
-    {
-        hint: "319  :  One number is correct and well placed \n\n540  :  Two numbers are correct but wrongly placed \n\n782  :  Nothing is correct",
-        codeLength: 3,
-        digits: [3, 4, 9],
-        permutations: 6
-    },
-    {
-        hint: "803  :  Two numbers are correct but wrongly placed \n\n291  :  Nothing is correct \n\n645  :  One number is correct and well placed",
-        codeLength: 3,
-        digits: [8, 4, 5],
-        permutations: 6
-    },
-    {
-        hint: "174  :  Nothing is correct \n\n863  :  One number is correct and well placed \n\n520  :  Two numbers are correct but wrongly placed",
-        codeLength: 3,
-        digits: [8, 2, 6],
-        permutations: 6
-    },
-    {
-        hint: "957  :  Two numbers are correct but wrongly placed \n\n438  :  Nothing is correct \n\n206  :  One number is correct and well placed",
-        codeLength: 3,
-        digits: [2, 9, 7],
-        permutations: 6
-    },
-    {
-        hint: "153  :  One number is correct and well placed \n\n678  :  Two numbers are correct but wrongly placed \n\n490  :  Nothing is correct",
-        codeLength: 3,
-        digits: [6, 7, 8],
-        permutations: 6
-    },
-    {
-        hint: "239  :  Nothing is correct \n\n814  :  Two numbers are correct but wrongly placed \n\n765  :  One number is correct and well placed",
-        codeLength: 3,
-        digits: [7, 5, 4],
-        permutations: 6
-    },
-    {
-        hint: "607  :  Two numbers are correct but wrongly placed \n\n381  :  One number is correct and well placed \n\n954  :  Nothing is correct",
-        codeLength: 3,
-        digits: [3, 1, 7],
-        permutations: 6
-    },
-    {
-        hint: "582  :  One number is correct and well placed \n\n430  :  Two numbers are correct but wrongly placed \n\n761  :  Nothing is correct",
-        codeLength: 3,
-        digits: [5, 3, 2],
-        permutations: 6
-    },
-    {
-        hint: "963  :  Two numbers are correct but wrongly placed \n\n218  :  Nothing is correct \n\n507  :  One number is correct and well placed",
-        codeLength: 3,
-        digits: [9, 5, 7],
-        permutations: 6
-    },
-    {
-        hint: "478  :  One number is correct and well placed \n\n329  :  Two numbers are correct but wrongly placed \n\n506  :  Nothing is correct",
-        codeLength: 3,
-        digits: [4, 9, 8],
-        permutations: 6
-    },
-    {
-        hint: "659  :  Two numbers are correct but wrongly placed \n\n213  :  One number is correct and well placed \n\n740  :  Nothing is correct",
+        hint: "210  :  Nothing is correct \n\n746  :  One number is correct and well placed \n\n583  :  Two numbers are correct but wrongly placed \n\n919  :  One number is correct but wrongly placed",
         codeLength: 3,
         digits: [6, 3, 5],
         permutations: 6
     },
     {
-        hint: "913  :  One number is correct and well placed \n\n507  :  Nothing is correct \n\n284  :  Two numbers are correct but wrongly placed",
+        hint: "481  :  One number is correct and well placed \n\n362  :  Two numbers are correct but wrongly placed \n\n597  :  Nothing is correct \n\n254  :  One number is correct but wrongly placed",
         codeLength: 3,
-        digits: [9, 2, 4],
+        digits: [3, 8, 4],
         permutations: 6
     },
     {
-        hint: "742  :  Two numbers are correct but wrongly placed \n\n351  :  One number is correct and well placed \n\n986  :  Nothing is correct",
+        hint: "847  :  One number is correct and well placed \n\n290  :  Two numbers are correct but wrongly placed \n\n765  :  Nothing is correct \n\n532  :  One number is correct and well placed",
         codeLength: 3,
-        digits: [7, 1, 2],
+        digits: [2, 4, 7],
         permutations: 6
     },
     {
-        hint: "631  :  Nothing is correct \n\n859  :  Two numbers are correct but wrongly placed \n\n204  :  One number is correct and well placed",
+        hint: "635  :  One number is correct and well placed \n\n189  :  Two numbers are correct but wrongly placed \n\n470  :  Nothing is correct \n\n804  :  Two numbers are correct but wrongly placed",
         codeLength: 3,
-        digits: [8, 9, 4],
+        digits: [1, 0, 5],
         permutations: 6
     },
     {
-        hint: "106  :  One number is correct and well placed \n\n437  :  Two numbers are correct but wrongly placed \n\n952  :  Nothing is correct",
+        hint: "752  :  One number is correct and well placed \n\n149  :  Two numbers are correct but wrongly placed \n\n863  :  Nothing is correct \n\n680  :  One number is correct and well placed",
         codeLength: 3,
-        digits: [1, 4, 7],
+        digits: [5, 7, 2],
         permutations: 6
     },
     {
-        hint: "847  :  Two numbers are correct but wrongly placed \n\n513  :  Nothing is correct \n\n902  :  One number is correct and well placed",
+        hint: "543  :  Two numbers are correct but wrongly placed \n\n297  :  One number is correct and well placed \n\n810  :  Nothing is correct \n\n564  :  One number is correct and well placed",
         codeLength: 3,
-        digits: [8, 2, 7],
+        digits: [5, 4, 3],
+        permutations: 6
+    },
+    {
+        hint: "298  :  One number is correct and well placed \n\n670  :  Two numbers are correct but wrongly placed \n\n184  :  Nothing is correct \n\n352  :  One number is correct but wrongly placed",
+        codeLength: 3,
+        digits: [9, 0, 8],
+        permutations: 6
+    },
+    {
+        hint: "123  :  Two numbers are correct but wrongly placed \n\n456  :  Nothing is correct \n\n789  :  One number is correct and well placed \n\n230  :  Two numbers are correct but wrongly placed",
+        codeLength: 3,
+        digits: [0, 2, 3],
+        permutations: 6
+    },
+    {
+        hint: "374  :  One number is correct and well placed \n\n615  :  Two numbers are correct but wrongly placed \n\n980  :  Nothing is correct \n\n841  :  One number is correct and well placed",
+        codeLength: 3,
+        digits: [3, 7, 4],
+        permutations: 6
+    },
+    {
+        hint: "158  :  One number is correct and well placed \n\n764  :  Two numbers are correct but wrongly placed \n\n953  :  Nothing is correct \n\n625  :  One number is correct but wrongly placed",
+        codeLength: 3,
+        digits: [5, 8, 1],
+        permutations: 6
+    },
+    {
+        hint: "760  :  One number is correct and well placed \n\n841  :  Two numbers are correct but wrongly placed \n\n239  :  Nothing is correct \n\n153  :  One number is correct but wrongly placed",
+        codeLength: 3,
+        digits: [1, 0, 7],
+        permutations: 6
+    },
+    {
+        hint: "852  :  One number is correct and well placed \n\n348  :  Two numbers are correct but wrongly placed \n\n915  :  Nothing is correct \n\n217  :  One number is correct but wrongly placed",
+        codeLength: 3,
+        digits: [2, 5, 8],
+        permutations: 6
+    },
+    {
+        hint: "469  :  One number is correct and well placed \n\n810  :  Two numbers are correct but wrongly placed \n\n273  :  Nothing is correct \n\n534  :  One number is correct but wrongly placed",
+        codeLength: 3,
+        digits: [4, 6, 9],
+        permutations: 6
+    },
+    {
+        hint: "294  :  One number is correct and well placed \n\n607  :  Two numbers are correct but wrongly placed \n\n821  :  Nothing is correct \n\n125  :  One number is correct but wrongly placed",
+        codeLength: 3,
+        digits: [2, 4, 9],
         permutations: 6
     }
 ];
